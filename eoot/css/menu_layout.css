@@ -1,0 +1,134 @@
+﻿
+.hidden {
+    display: none;
+}
+
+/* Menu 1 */
+#menu1{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    width: 70px;
+    color: #CCCCCC;
+    font-size: 15px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.15);
+    z-index: 1;
+}
+
+#menu1 #menu_button{
+    width: 70px;
+    height: 70px;
+    background: url("../images/menu_button.png") no-repeat left top;
+    cursor: pointer;
+    background-size: cover;
+}
+
+#menu1 #buttons{
+    position: absolute;
+    top: 70px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: #404148;
+}
+
+#menu1 .button{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 28%;
+    cursor: pointer;
+    background: #404148;
+}
+
+#menu1 .img-button{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 6%;
+}
+
+.vertical-field1 {
+	position: relative;
+	display: table;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.vertical-field2{ 
+	position: relative;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.img-vertical-field2{ 
+	position: relative;
+	display: table-cell;
+	vertical-align: bottom;
+}
+
+#menu1 .visual{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 6px;
+    background: url("../images/menu_separator1.png") center no-repeat;
+}
+
+#menu1 #separator {
+    position: relative;
+    float:left;
+    width: 100%;
+    height: 2%;
+}
+
+#menu2{
+    position: fixed;
+    top: 0px;
+    left: -200px;
+    bottom: 0px;
+    width: 200px;
+    color: #CCCCCC;
+    font-size: 15px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.15);
+    z-index:1;
+}
+
+#menu2 #menu_button{
+    width: 200px;
+    height: 70px;
+    background: white;
+    cursor: pointer;
+    background-size: cover;
+}
+
+#menu2 #buttons{
+    position: absolute;
+    top: 70px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: #404148;
+}
+
+#menu2 .button{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 7%;
+    cursor: pointer;
+    background: #404148;
+}
+
+#menu2 .visual{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 1px;
+    background: url("../images/menu_separator1.png") center;
+}
+
+/*//////////////////////////////////////////////////////////////////////*/
+

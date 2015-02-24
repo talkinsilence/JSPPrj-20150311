@@ -1,0 +1,15 @@
+﻿#menu1 .vertical_text{
+    word-wrap: break-word;
+    width: 14px;
+    font-family: 맑은 고딕, 고딕, sans-serif;
+    font-size: 15px;
+    display: inline-block;
+    line-height: 25px;
+}
+
+#menu2 .vertical_text{
+    font-family: 맑은 고딕, 고딕, sans-serif;
+    font-size: 15px;
+    display: inline-block;
+    line-height: 25px;
+}

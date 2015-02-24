@@ -1,0 +1,88 @@
+﻿/*=======< post-header STYLE >===================================*/
+.post-info {
+    font-family: 맑은 고딕, 고딕, sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.post-info-writer {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.post-info-wrapper {
+    color: #999;
+    font-size: 12px;
+}
+/*=======< post-main STYLE >===================================*/
+.post-content {
+    font-family: 맑은 고딕, 고딕, sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.post-content-more {
+    color: #999;
+    font-family: 맑은 고딕, 고딕, sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/*=======< post-footer STYLE >===================================*/
+.post-popularity-cnt {
+    font-family: 맑은 고딕, 고딕, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/*=======< post-comment STYLE >===================================*/
+
+.comment-info-writer {
+    font-family:  맑은 고딕, 고딕, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.comment-info-date {
+    font-family:  맑은 고딕, 고딕, sans-serif;
+    font-size: 12px;
+    color: #999;
+}
+
+.comment-like {
+    font-family:  맑은 고딕, 고딕, sans-serif;
+    font-size: 11px;
+    color: #999;
+}
+
+.comment-content {
+    font-family:  맑은 고딕, 고딕, sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+input[type=text] {
+    font-size: 12px;
+    color: #404040;
+}
+
+input[type=button] {
+    font-size: 12px;
+    color: white;
+}
+/*#menu1 .vertical_text{
+    word-wrap: break-word;
+    width: 14px;
+    font-family: 맑은 고딕, 고딕, sans-serif;
+    font-size: 15px;
+    display: inline-block;
+    line-height: 25px;
+}
+
+#menu2 .vertical_text{
+    font-family: 맑은 고딕, 고딕, sans-serif;
+    font-size: 15px;
+    display: inline-block;
+    line-height: 25px;
+}*/

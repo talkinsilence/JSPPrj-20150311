@@ -1,0 +1,357 @@
+﻿
+.hidden {
+    display: none;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+/*////////툴바 레이아웃/////////////////////////////////////*/
+
+/*#aside {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background: #F2F2F2;
+    border: 1px solid blue;
+    z-index: 1;
+}*/
+
+/*////////뉴스피드 레이아웃/////////////////////////////////////*/
+html {
+    background: #E5E5E5;
+}
+
+.main {
+    display: block;
+}
+
+.wrapper {
+    display: block;
+    left: 50%;
+    margin-left: -380px; /*( 760px / 2 )*/
+    right: 50%;
+    margin-right: -380px;
+    position: absolute;
+    min-width: 760px;
+    background: #E5E5E5;
+}
+
+.post {
+    display: block;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    /*width: 518px;*/
+    width: 358px;
+    background: white;
+    border: 1px solid #d8d8d8;
+    border-bottom-width: 2px;
+    border-radius: 3px;
+}
+
+    .post {
+        clear: left;
+        float: left;
+    }
+
+    .post:nth-child(2n) {
+        clear: right;
+        float: right;
+    }
+
+
+/*=======< post-header >===================================*/
+.post-header-wrapper {
+    display: block;
+    width: calc(100%-40px);
+    height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+
+.post-header {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 60px; 
+}
+
+.profile-pic-box {
+    display: block;
+    position: absolute;
+    margin-top: 20px;
+    margin-right: 15px;
+    width: 46px;
+    height: 46px;
+    background: black;
+    overflow: hidden;
+}
+
+.thumbnail{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: auto;
+  height: 100%;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+
+.post-info {
+    display: block;
+    position: absolute;
+    /*width: 257px;*/
+    height: 37px;
+    margin-left: 61px;
+    margin-bottom: 15px;
+    padding-top: 23px;
+}
+
+.post-info-writer {
+    display: block;
+    height: 17px;
+}
+
+.post-info-wrapper {
+    display: inline-block; 
+    padding-top: 3px;
+}
+
+.post-info-sharing-details {
+    display: inline-block;
+    height: 16px;
+    float: left;
+    /*border-right: 1px solid #999;*/
+    /*padding-right: 13px;*/
+    
+}
+
+.post-info-date {
+    display: inline-block;
+    height: 16px;
+    float: left;
+    padding-left: 24px;
+    background: url(../images/post-info-line.png) no-repeat 10px center;
+}
+
+/*=======< post-main >===================================*/
+.post-main-wrapper {
+    display: block;
+    width: calc(100%-40px);
+    min-height: 28px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.post-main {
+    height: 100%; 
+}
+
+.post-content-wrapper {
+    padding-bottom: 20px;
+}
+
+/*.post-content {
+    width: 100%;
+}
+
+.post-content-more {
+    display: inline-block;
+}*/
+
+.post-main-img {
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+
+/*=======< post-footer >===================================*/
+
+.post-footer-wrapper {
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+
+.post-footer {
+    display: block;
+    height: 100%;
+}
+
+.post-popularity-wrapper {
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.post-popularity {
+    display: block;
+    margin-top: -6px;
+    /*margin-top: -60px;*/
+}
+
+.post-popularity-item {
+    display: inline-block;
+    border: 1px solid #ededed;
+    border-radius: 4px;
+    margin-top: 13px;
+    min-width: 36px;
+    height: 28px;
+    /*background: white;
+    opacity: 0.4;*/
+}
+
+.post-popularity-item.like {
+}
+
+.post-popularity-item.scrap {
+    margin-left: 8px;
+}
+
+.post-popularity-item.comment{
+    float: right;
+}
+
+    .post-popularity :hover {
+        background: #F5F5F5;
+        border-color: #c1c1c1;
+    }
+
+.post-popularity-btn {
+    display: inline-block;
+    width: 16px;
+    margin-left: 5px;
+    margin-right: 3px;
+    margin-top: 7px;
+    float: left;
+    /*background: none;
+    z-index: 1;*/
+}
+
+.post-popularity-cnt {
+    display: inline-block;
+    margin-right: 5px;
+    margin-top: 2px;
+    /*background: none;
+    z-index: 1;*/
+}
+
+
+/*=======< post-comment >===================================*/
+.post-comment-wrapper {
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 12px;
+    background: #F5F5F5;
+    border-top: 1px solid #E5E5E5;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.post-comment {
+    display: block;
+}
+
+.post-comment-list {
+    display: block;
+    position: relative;
+    padding-bottom: 10px;
+    clear: left;
+}
+
+.post-comment-list li {
+    margin-top: 5px;
+}
+
+.comment-info {
+    margin-left: 36px;
+    padding-top: 8px;
+}
+
+.comment-info-writer {
+    display: block;
+}
+
+.comment-info-date {
+    display: inline-block;
+    float: left;
+}
+
+.comment-like {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.comment-like-btn {
+    display: inline-block;
+    float: left;
+    padding-top: 4px;
+}
+
+.comment-like-cnt {
+    display: inline-block;
+    margin-left: 2px;
+    padding-top: 1px;
+}
+
+.comment-content {
+    display: block;
+    margin-left: 36px;
+}
+
+.post-comment-write {
+    display: block;
+    clear: left;
+}
+.profile-pic-box-s {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    margin-top: 11px;
+    background: black;
+    float: left;
+    overflow: hidden;
+    /*border-radius: 14px;*/
+}
+
+input[type=text] {
+    width: calc(100% - 112px);
+    min-height: 30px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left: 36px;
+    margin-right: 8px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    background: white;
+    float: left;
+
+    /*box-sizing: border-box;*/
+    height: auto;
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+input[type=button] {
+    width: 50px;
+    height: 30px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 11px;
+    border: 1px solid #c1c1c1;
+    border-radius: 4px;
+    background: #c1c1c1;
+}
+
+
+

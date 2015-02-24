@@ -1,0 +1,148 @@
+﻿.hidden {
+    display: none;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+html {
+    display: block;
+}
+
+body {
+    display: block;
+}
+
+/*////////< upper layout >///////////////////////////////////*/
+.upper {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: yellow;
+}
+
+.profile-pic-box-bg {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: darkgrey;
+    overflow: hidden;
+}
+
+.thumbnail{
+  position: absolute;
+  margin: 0;
+  left: 50%;
+  top: 130px; 
+  height: auto;
+  width: 100%;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+
+.upper .left {
+    width: 401px;
+    height: 100%;
+    position: relative;
+}
+
+.profile-bg {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.3;
+}
+
+.profile {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.logo {
+    display: block;
+    padding-top: 30px;
+    padding-left: 105px;
+}
+
+.profile-pic-box-main {
+    display: block;
+    position: absolute;
+    width: 185px;
+    height: 185px;
+    margin-left: 105px;
+    margin-top: 22px;
+    background-image: url(../images/pic-default2.png);
+    overflow: hidden;
+    border: 3px solid white;
+}
+
+.profile-pic-box-main .thumbnail {
+    position: absolute;
+    margin: 0;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.profile-id {
+    display: block;
+    position: relative;
+    top: 230px;
+}
+
+.profile-name {
+    display: block;
+    position: relative;
+    top: 235px;
+}
+
+.profile-family-members {
+    
+}
+
+/*////////< lower layout >///////////////////////////////////*/
+.lower {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 500px);
+}
+
+.lower .left {
+    display: block;
+    position: absolute;
+    width: 401px;
+    height: 100%;
+    background: #C1C1C1;
+}
+
+.lower .right {
+    display: block;
+    position: absolute; 
+    left: 401px;
+    width: calc(100% - 401px);
+    height: 100%;
+    background: #E5E5E5;
+}
+
+/*.header {
+    display: block;
+    height: 100px;
+    background: white;
+}*/
+
+
+

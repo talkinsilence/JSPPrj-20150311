@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="bobby1.jpg" width="100" height="100">
+
+<script>
+function bigImg(x) {
+    x.style.height = "200px";
+    x.style.width = "200px";
+}
+
+function normalImg(x) {
+    x.style.height = "100px";
+    x.style.width = "100px";
+}
+</script>
+
+</body>
+</html>

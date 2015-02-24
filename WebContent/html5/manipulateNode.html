@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+window.onload = function(){
+	
+	var addTextNode = document.getElementById("add-text-node");
+	var addImgNode = document.getElementById("add-img-node");
+	var removeLastNode = document.getElementById("remove-last-node");
+	var copyNode = document.getElementById("copy-node");
+
+	var div1 = document.getElementById("div1");
+	var div2 = document.getElementById("div2");
+	var div3 = document.getElementById("div3");
+	
+	addTextNode.onclick = function(){
+		var txt = document.createTextNode("hello");
+		div1.appendChild(txt);
+	}
+	
+	addImgNode.onclick = function(){
+		var img1 = document.createElement("img");
+		img1.src = "bobby1.jpg";
+		div2.appendChild(img1);
+	}
+	
+	removeLastNode.onclick = function(){
+		var txt = div1.lastChild;
+		div1.removeChild(txt);
+		alert("삭제했습니다.");
+	}
+	
+	copyNode.onclick = function(){
+		var clone1 = div2.cloneNode(true);
+		document.body.appendChild(clone1);
+	}
+	
+}
+
+
+</script>
+</head>
+<body>
+	<div id="div1">
+	</div>
+	<div id="div2">
+	</div>
+	<div id="div3">
+	</div>
+	<p>
+		<input type="button" id="add-text-node" value="텍스트노드추가" />
+		<input type="button" id="add-img-node"  value="이미지노드추가" /><br />
+		<input type="button" id="remove-last-node"  value="막내노드삭제" />
+		<input type="button" id="copy-node"  value="노드 복제" />
+	</p>
+</body>
+</html>
