@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function event1()
+	{
+	   alert("event1 start");
+	   event2(function(){alert("event2 ended");});
+	   alert("event1 ended");
+	};
+	
+	function event2(callback)
+	{
+	   alert("event2 start");
+	   if(callback != null)
+	      callback();
+	};
+	
+	onclick = event1;
+</script>
+</head>
+<body>
+
+</body>
+</html>
