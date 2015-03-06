@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.eoot.jspprj.dao.NoticeDao">
+<!-- 	<select id = "getNotice" 
+		parameterType="String" 
+		resultType="com.eoot.jspprj.model.Notice">
+		SELECT * FROM NOTICES WHERE CODE=#{code}; code라는 파라미터를 이렇게 받아올 수 있다. 
+	</select> -->
+			
+<!-- 	<select id = "getNotices" resultType="com.eoot.jspprj.model.Notice">
+		SELECT N.* FROM 
+			(SELECT (ROW_NUMBER() OVER (ORDER BY REGDATE DESC)) NUM
+			, NOTICES.* FROM NOTICES WHERE ${param3} LIKE '%${param2}%') N 
+			WHERE N.NUM BETWEEN #{param1} AND #{param1}
+	</select> -->
+<!--<select id = "getNotices"></select>
+	<select id = "getNotices"></select> 오버로드함수는 구현 불가.-->
+	
+<!-- 	<select id = "prevNotice"
+		parameterType="String"
+		resultType="com.eoot.jspprj.model.Notice">
+		SELECT TOP 1 * FROM NOTICES 
+		WHERE REGDATE &gt; (SELECT REGDATE FROM NOTICES WHERE CODE =#{currentCode}) 
+		ORDER BY REGDATE ASC
+	</select> -->
+	
+<!-- 	<select id = "nextNotice"
+		parameterType="String"
+		resultType="com.eoot.jspprj.model.Notice">
+		SELECT TOP 1 * FROM NOTICES 
+		WHERE REGDATE &lt; (SELECT REGDATE FROM NOTICES WHERE CODE =#{currentCode}) 
+		ORDER BY REGDATE DESC
+	</select> -->
+	
+	<insert id = "insert" parameterType="com.eoot.jspprj.model.Notice">
+		<selectKey keyColumn="code" resultType="String" order="BEFORE"><!-- 키를 얻기 위한 셀렉트문입니다~ -->
+			SELECT ISNULL(MAX(CAST(CODE AS INT)),0)+1 CODE FROM NOTICES
+		</selectKey>
+			INSERT INTO NOTICES(CODE, TITLE, WRITER, CONTENT,REGDATE, HIT) 
+			VALUES(#{code},#{title},#{writer},#{content},GetDate(),0)
+	</insert>
+	
+	<update id = "update" 
+		parameterType="com.eoot.jspprj.model.Notice">
+		<!-- 요고는 반환값이 없으니까 resultType노노.  -->
+		UPDATE NOTICES SET(TITLE=#{title}, CONTENT=#{content}) WHERE CODE =#{code}
+	</update>
+	
+	<delete id = "delete"
+		parameterType="String">
+		DELETE NOTICES WHERE CODE =#{code}
+	</delete>
+	
+	<select id = "getSize"
+		resultType="int">
+		<!-- SELECT COUNT(*) CNT FROM NOTICES WHERE " + field + " LIKE ?-->	
+		<!-- SELECT COUNT(*) CNT FROM NOTICES WHERE ${field} LIKE #{query} -->                                                  <!-- 값 -->	
+		SELECT COUNT(*) CNT FROM NOTICES WHERE ${param2} LIKE '%${param1}%'
+		<!-- 파라미터가 두 개 이상 전달될 때는 그 이름을 못쓴다. param1, param2 --> 
+	</select>
+	<!-- <select id = "getSize"></select> 오버로드함수는 구현할 수 없다. 인자 제일 많은 것을 구현하는 식으로 해야함.  -->
+	
+	<select id = "lastCode"
+		resultType="com.eoot.jspprj.model.Notice">	
+		SELECT ISNULL(MAX(CAST(CODE AS INT)),0) CODE FROM NOTICES
+	</select>
+	
+<!--
+NoticeDao 인터페이스에서... 
+	public Notice getNotice(String code);
+	public Notice prevNotice(String currentCode);
+	public Notice nextNotice(String currentCode);
+	public List<Notice> getNotices(int page, String query, String field);
+	public List<Notice> getNotices(int page, String query);
+	public List<Notice> getNotices(int page);
+	public int insert(Notice notice); 
+	public int update(Notice notice); 
+	public int delete(String code);
+	public int getSize(String query, String field);
+	public int getSize(String query);
+	public String lastCode();
+-->
+</mapper>
