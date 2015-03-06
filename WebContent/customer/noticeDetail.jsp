@@ -1,4 +1,7 @@
-﻿<%@page import="com.eoot.jspprj.dao.jdbc.JdbcNoticeDao"%>
+﻿<%@page import="com.eoot.jspprj.dao.NoticeDao"%>
+<%@page import="com.eoot.jspprj.dao.mybatis.MyBatisMain"%>
+<%@page import="org.apache.ibatis.session.SqlSession"%>
+<%@page import="com.eoot.jspprj.dao.jdbc.JdbcNoticeDao"%>
 <%@page import="com.eoot.jspprj.model.Notice"%>
 <%@page import="java.sql.Date"%>
 <%@page import="java.sql.DriverManager"%>
@@ -11,7 +14,14 @@
     pageEncoding="UTF-8"%>
 <% 
 String _code = request.getParameter("c");
-Notice n = new JdbcNoticeDao().getNotice(_code);
+
+//Notice n = new JdbcNoticeDao().getNotice(_code);
+//jdbc안쓰고 mapper객체 얻어와야. 
+SqlSession sqlSession = MyBatisMain.getSqlSessionFactory().openSession(true);
+NoticeDao noticeDao = sqlSession.getMapper(NoticeDao.class);
+
+Notice n = noticeDao.getNotice(_code);
+
 pageContext.setAttribute("n", n);
 %>
 <!DOCTYPE html>

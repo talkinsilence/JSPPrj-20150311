@@ -1,7 +1,10 @@
-﻿<%@page import="com.eoot.jspprj.model.Notice"%>
-<%@page import="java.util.List"%>
+﻿
+
+<%@page import="com.eoot.jspprj.dao.mybatis.MyBatisMain"%>
 <%@page import="com.eoot.jspprj.dao.NoticeDao"%>
-<%@page import="com.eoot.jspprj.dao.jdbc.JdbcNoticeDao"%>
+<%@page import="org.apache.ibatis.session.SqlSession"%>
+<%@page import="com.eoot.jspprj.model.Notice"%>
+<%@page import="java.util.List"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Connection"%>
@@ -29,12 +32,19 @@ pageEncoding="UTF-8"%>
 	
 	if(_field != null && !_field.equals(""))
 	   field = _field;
-
-	NoticeDao noticeDao  =new JdbcNoticeDao();
+	
+	
+/* 	SqlSession sqlSession = MyBatisMain.getSqlSessionFactory().openSession(true);
+	NoticeDao noticeDao = sqlSession.getMapper(NoticeDao.class); */
+	
+	
 	List<Notice> list = noticeDao.getNotices(npage, query, field); 
+	
 	pageContext.setAttribute("list", list);
-	pageContext.setAttribute("total", noticeDao.getSize(""));
+	pageContext.setAttribute("total", noticeDao.getSize("", "TITLE"));
 /* 	페이지컨텍스트에 추가해줘야. */
+
+
 
 %>
 
@@ -59,8 +69,7 @@ pageEncoding="UTF-8"%>
 				<nav id="main-menu">
 					<h1 class="hidden">메인메뉴</h1>
 					<ul class="clearfix">
-						<
-						li class="main-menu-item"><a class="main-menu-item-text"
+						<li class="main-menu-item"><a class="main-menu-item-text"
 							href="">학습가이드</a></li>
 						<li class="main-menu-item"><a class="main-menu-item-text"
 							href="">뉴렉과정</a></li>

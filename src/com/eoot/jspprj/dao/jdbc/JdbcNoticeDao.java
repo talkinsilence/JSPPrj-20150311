@@ -67,10 +67,10 @@ public class JdbcNoticeDao implements NoticeDao {
 				+ "(SELECT (ROW_NUMBER() OVER (ORDER BY REGDATE DESC)) NUM"
 				+ ", NOTICES.* FROM NOTICES WHERE " + field + " LIKE ?) N	"
 				+ "WHERE N.NUM BETWEEN ? AND ?";
-/*		String sql = "SELECT * FROM ( "
-				+ "SELECT ROWNUM NUM, N.* FROM ( "
-				+ "SELECT * FROM NOTICES WHERE " + field + " LIKE ? ORDER BY REGDATE DESC) N) "
-				+ "NOTICES WHERE NUM BETWEEN ? AND ?"; */
+//		String sql = "SELECT * FROM ( "
+//				+ "SELECT ROWNUM NUM, N.* FROM ( "
+//				+ "SELECT * FROM NOTICES WHERE " + field + " LIKE ? ORDER BY REGDATE DESC) N) "
+//				+ "NOTICES WHERE NUM BETWEEN ? AND ?"; 
 //		String url = "jdbc:oracle:thin:@win.newlecture.com:1521:orcl";
 		
 		//연결문자열 붙여넣기 
