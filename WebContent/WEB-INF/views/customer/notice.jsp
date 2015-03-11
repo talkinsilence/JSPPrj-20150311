@@ -1,52 +1,8 @@
-﻿
-
-<%@page import="com.eoot.jspprj.dao.mybatis.MyBatisMain"%>
-<%@page import="com.eoot.jspprj.dao.NoticeDao"%>
-<%@page import="org.apache.ibatis.session.SqlSession"%>
-<%@page import="com.eoot.jspprj.model.Notice"%>
-<%@page import="java.util.List"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.DriverManager"%>
-<%@taglib prefix ="c" uri = "http://java.sun.com/jsp/jstl/core" %>
+﻿<%@taglib prefix ="c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="nami" uri ="http://www.eoot.com/jsp/tags/control" %>
 <%@taglib prefix="ui" tagdir="/WEB-INF/tags" %>
 <%@page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
-
-<%	
-	int npage =1;
-	String query = "";
-	String field = "TITLE";
-	
-	String _page = request.getParameter("p");
-	String _query = request.getParameter("q");
-	String _field = request.getParameter("f");
-	
-	if(_page != null && !_page.equals(""))
-	   npage = Integer.parseInt(_page);
-	
-	if(_query != null && !_query.equals(""))
-	   query = _query;
-	
-	if(_field != null && !_field.equals(""))
-	   field = _field;
-	
-	
-/* 	SqlSession sqlSession = MyBatisMain.getSqlSessionFactory().openSession(true);
-	NoticeDao noticeDao = sqlSession.getMapper(NoticeDao.class); */
-	
-	
-	List<Notice> list = noticeDao.getNotices(npage, query, field); 
-	
-	pageContext.setAttribute("list", list);
-	pageContext.setAttribute("total", noticeDao.getSize("", "TITLE"));
-/* 	페이지컨텍스트에 추가해줘야. */
-
-
-
-%>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -201,7 +157,7 @@ pageEncoding="UTF-8"%>
 						<c:forEach var="n" items="${list}"> 
 						<tr class="board-row">
 							<td class="board-cell num">${n.code}</td>
-							<td class="board-cell title"><a href="noticeDetail.jsp?c=${n.code}">${n.title}</a></td>
+							<td class="board-cell title"><a href="noticeDetail.htm?c=${n.code}">${n.title}</a></td>
 							<td class="board-cell writer">${n.writer}</td>
 							<td class="board-cell date">${n.regdate}</td>
 							<td class="board-cell hit">${n.hit}</td>
@@ -212,7 +168,7 @@ pageEncoding="UTF-8"%>
 						%> --%>
 					</tbody>
 				</table>
-				<a href="noticeReg.jsp">등록</a>
+				<a href="noticeReg.htm">등록</a>
 			</div>
 
 			<div id="indexer-container" class=" space-top text-right">

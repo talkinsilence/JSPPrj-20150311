@@ -30,5 +30,19 @@
 	<classpathentry kind="lib" path="C:/Users/sist/Desktop/spring-framework-4.1.5.RELEASE-dist (1)/spring-framework-4.1.5.RELEASE/libs/spring-webmvc-portlet-4.1.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/Users/sist/Desktop/spring-framework-4.1.5.RELEASE-dist (1)/spring-framework-4.1.5.RELEASE/libs/spring-websocket-4.1.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/Users/sist/Desktop/com.springsource.org.aopalliance-1.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sist/Downloads/aspectjrt-1.8.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sist/Downloads/aspectjweaver-1.8.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sist/Downloads/spring-security-core-3.2.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sist/Desktop/spring-security-3.1.0.RELEASE/spring-security-3.1.0.RELEASE/dist/spring-security-acl-3.1.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sist/Desktop/spring-security-3.1.0.RELEASE/spring-security-3.1.0.RELEASE/dist/spring-security-aspects-3.1.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sist/Desktop/spring-security-3.1.0.RELEASE/spring-security-3.1.0.RELEASE/dist/spring-security-cas-3.1.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sist/Desktop/spring-security-3.1.0.RELEASE/spring-security-3.1.0.RELEASE/dist/spring-security-config-3.1.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sist/Desktop/spring-security-3.1.0.RELEASE/spring-security-3.1.0.RELEASE/dist/spring-security-core-3.1.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sist/Desktop/spring-security-3.1.0.RELEASE/spring-security-3.1.0.RELEASE/dist/spring-security-crypto-3.1.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sist/Desktop/spring-security-3.1.0.RELEASE/spring-security-3.1.0.RELEASE/dist/spring-security-ldap-3.1.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sist/Desktop/spring-security-3.1.0.RELEASE/spring-security-3.1.0.RELEASE/dist/spring-security-openid-3.1.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sist/Desktop/spring-security-3.1.0.RELEASE/spring-security-3.1.0.RELEASE/dist/spring-security-remoting-3.1.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sist/Desktop/spring-security-3.1.0.RELEASE/spring-security-3.1.0.RELEASE/dist/spring-security-taglibs-3.1.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sist/Desktop/spring-security-3.1.0.RELEASE/spring-security-3.1.0.RELEASE/dist/spring-security-web-3.1.0.RELEASE.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

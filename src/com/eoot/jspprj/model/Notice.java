@@ -2,6 +2,8 @@ package com.eoot.jspprj.model;
 
 import java.util.Date;
 
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
 public class Notice {
 	private String code;
 	private String title;
@@ -9,6 +11,11 @@ public class Notice {
 	private Date regdate;
 	private String content;
 	private int hit;
+	
+	private CommonsMultipartFile file;
+	
+	public CommonsMultipartFile getFile() {return file;}
+	public void setFile(CommonsMultipartFile file) {this.file = file;}
 	
 	public String getCode() {return code;}
 	public void setCode(String code) {this.code = code;}

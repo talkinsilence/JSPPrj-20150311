@@ -1,15 +1,5 @@
-﻿<%@page import="com.eoot.jspprj.dao.jdbc.JdbcNoticeDao"%>
-<%@page import="com.eoot.jspprj.model.Notice"%>
-<%@page import="java.sql.Date"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.Connection"%>
-<%-- <%@page import="java.sql.*"%>로 받아도 됨. --%>
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -111,32 +101,33 @@
 
                 <!-------------<페이지 컨텐트 영역>-------------------------------------------------------------------->
 
-			<section id="notice-detail" class="space-top-l">
-			<h1 class="hidden">공지사항 내용</h1>
-				<form action="noticeRegProc.jsp" method="post" enctype="multipart/form-data">
-					<fieldset>
-					<legend>공지사항 입력필드</legend>
-						<dl>
-							<dt class="detail-cell title newrow">제목</dt>
-							<dd class="detail-cell text-highlight"><input type="text" name="title"/></dd>
-							<dt class="detail-cell title newrow">첨부파일</dt>
-							<dd class="detail-cell"><input type="file" name="file"/></dd>
-							<dt class="hidden">내용</dt>
-							<dd class="content newrow">
-								<textarea name="content" rows="20" cols="110"></textarea>
-							</dd>
-						</dl>
-					</fieldset>
-					<p id="button-container" class="space-top text-center">
-						<input type="submit" value="등록"/> <!-- 등록은 noticeRegProc에서 처리해줌 -->
-						<a href="notice.jsp">취소</a>
-						<!-- <a id="btn-list" href="notice.html">목록</a> -->
-					</p>
-				</form>
-			</section>
+                <article id="notice-detail" class="space-top-l">
+                    <h1 class="hidden">공지사항 내용</h1>
 
+                    <dl>
+                        <dt class="detail-cell title newrow">제목</dt>
+                        <dd class="detail-cell text-highlight">${n.title}</dd>
+                        <dt class="detail-cell title newrow">작성일</dt>
+                        <dd class="detail-cell">${n.regdate}</dd>
+                        <dt class="detail-cell title newrow">작성자</dt>
+                        <dd class="detail-cell half-cell">${n.writer}</dd>
+                        <dt class="detail-cell title">조회수</dt>
+                        <dd class="detail-cell half-cell">${n.hit}</dd>
+                        <dt class="detail-cell title newrow">첨부파일</dt>
+                        <dd class="detail-cell"></dd>
+                        <dt class="hidden">내용</dt>
+                        <dd class="content newrow">${n.content}                        
+                        </dd>
+                    </dl>
+                 
+                    <p id="button-container" class="space-top text-center">
+                        <a id="btn-list" href="notice.jsp">목록</a>
+                        <a href="noticeEdit.jsp?c=${n.code}">수정</a>
+                    </p>
+                </article>
+                
 
-			<!-------------</페이지 컨텐트 영역>-------------------------------------------------------------------->
+                <!-------------</페이지 컨텐트 영역>-------------------------------------------------------------------->
 
             </main>
         </div>
