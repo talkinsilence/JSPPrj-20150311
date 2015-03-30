@@ -7,12 +7,26 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
     
-
-        
-   <!-- 기본 서블릿 설정  -->
+<!-- 기본 서블릿 설정  -->
     <context:component-scan base-package="com.eoot.jspprj.controller" />  
 
-    <bean id="noticeDao" class="com.eoot.jspprj.dao.jdbc.JdbcNoticeDao" />
+    <bean name="multipartResolver" 
+    	class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    	<property name="maxUploadSize" value="100000000" /> <!-- 100메가바이트 -->
+    </bean>
+
+	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.tiles2.TilesView"></property>
+	</bean>
+
+	<bean class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions" value="/WEB-INF/tiles-defs.xml"></property>
+	</bean>
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	</bean>
 	
 <!--<bean name="/customer/notice.htm" class="com.eoot.jspprj.controller.NoticeController"></bean> 
 	<bean name="/customer/noticeDetail.htm" class="com.eoot.jspprj.controller.NoticeDetailController"></bean> 	       

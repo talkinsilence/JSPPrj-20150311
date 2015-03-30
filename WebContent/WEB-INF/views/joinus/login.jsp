@@ -101,17 +101,17 @@
                 </div>
                 
                 <div>
-                	<span style = "color:red;">${msg }</span>
+                	<span style = "color:red;">${msg}</span>
                 </div>
 
-                <form action="loginProc.jsp" method="post">
+                <form action="${pageContext.request.servletContext.contextPath}/j_spring_security_check" method="post">
 	                <fieldset>
 	                	<legend>로그인 정보</legend>
 	                	<dl>
 	                		<dt><label>아이디</label></dt>
-	                		<dd><input type="text" name="uid"/></dd>
+	                		<dd><input type="text" name="j_username"/></dd>
 	                		<dt><label>비밀번호</label></dt>
-	                		<dd><input type="password" name="pwd"/></dd>
+	                		<dd><input type="password" name="j_password"/></dd>
 	                	</dl>
 	                	<p>
 	                		<input type ="submit" value="로그인"/>

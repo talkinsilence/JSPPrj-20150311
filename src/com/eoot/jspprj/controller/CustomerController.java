@@ -3,12 +3,15 @@ package com.eoot.jspprj.controller;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.security.Principal;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -62,7 +65,7 @@ public class CustomerController {
 		mv.addObject("total", noticeDao.getSize("", "TITLE"));*/
 		model.addAttribute("list", list);
 		model.addAttribute("total", noticeDao.getSize("", "TITLE"));
-		return "/WEB-INF/views/customer/notice.jsp"; 
+		return "customer.notice"; 
 	}	
 	
 	@RequestMapping("noticeDetail.htm")
@@ -78,7 +81,7 @@ public class CustomerController {
 		mv.addObject("n", n);*/
 		model.addAttribute("n", n);
 		
-		return "/WEB-INF/views/customer/noticeDetail.jsp";
+		return "customer.noticeDetail";
 	}
 	
 	@RequestMapping("noticeDel.htm")
@@ -115,11 +118,13 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value="noticeReg.htm", method=RequestMethod.POST)
-	public String noticeReg(Notice n/*, NoticeFile nf*/, HttpServletRequest request){ //세터명 충돌하지 않도록 주의!
+	public String noticeReg(Notice n/*, NoticeFile nf*/, HttpServletRequest request, Principal principal){ //세터명 충돌하지 않도록 주의!
 		//multipartResolver설정만 잘 해주면 파일이든 문자열이든 알아서 잘 담기게 된다. 
 		
 		System.out.println(n.getFile().getOriginalFilename());
-
+		
+		//n.getFile().getBytes();
+		//n.getFile().getInputStream();
 		
 		String path = "/customer/upload"; //저장할때는 물리경로 필요. 서블릿 컨텍스트 필요. 
 		path = request.getServletContext().getRealPath(path);
@@ -140,6 +145,16 @@ public class CustomerController {
 			e.printStackTrace();
 		}
 
+		
+		//사용자 정보 동적으로 얻어오기 
+		/*UserDetails user = (UserDetails) SecurityContextHolder
+											.getContext()
+											.getAuthentication()
+											.getPrincipal();*/
+		
+		//noticeDao.setSrc(fname);
+		n.setWriter(principal.getName());
+		noticeDao.insert(n);
 		//파일 데이터
 		//문자열 데이터
 		return "redirect:notice.htm"; 

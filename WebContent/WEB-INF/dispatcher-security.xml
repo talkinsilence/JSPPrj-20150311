@@ -10,11 +10,24 @@
         http://www.springframework.org/schema/security
         http://www.springframework.org/schema/security/spring-security.xsd">
     
-    <http auto-config="true"> 
-    	<intercept-url pattern="/customer/noticeReg.htm" access="ROLE_ADMIN"/>
+    <http>
+    	<form-login login-page="/joinus/login.htm" default-target-url="/customer/notice.htm"/> 
+    	<logout logout-success-url="/customer/notice.htm"/>
+    	<intercept-url pattern="/customer/noticeReg.htm" access="ROLE_USER"/>
     </http>
 	<authentication-manager>
 		<authentication-provider>
+			<!-- <jdbc-user-service data-source-ref="dataSource"   
+			users-by-username-query="
+				SELECT MID USERID, PWD PASSWORD, 1 ENABLED 
+				FROM MEMBERS WHERE MID=?" 
+			authorities-by-username-query="
+				SELECT USERID, 'ROLE_USER' AUTHORITIES 
+				FROM MEMBERS WHERE MID=?" />  -->	
+
+		    <!-- 예약어는 &quot; 앞뒤로 필요. -->
+		    <!-- 원래는 FROM MEMBERS INNER JOIN ROLES 필요   -->
+		    
 			<user-service>
 				<user name="newlec" password="1234" authorities="ROLE_USER, ROLE_TEACHER, ROLE_ADMIN" />
 				<user name="nami" password="1111" authorities="ROLE_USER" />

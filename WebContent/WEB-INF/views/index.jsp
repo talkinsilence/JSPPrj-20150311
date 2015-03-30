@@ -1,5 +1,6 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -11,21 +12,27 @@
 </head>
 <body>
 	<!-- 헤더부분 -->
-	<jsp:include page="inc/header.jsp"></jsp:include>
+	<%-- <jsp:include page="${ctxName}/inc/header.jsp"></jsp:include> --%>
 
-    <div id="visual">
+ <!--    <div id="visual">
         <div class="content-wrapper">
 
         </div>
-    </div>
+    </div> -->
+    
+    <!-- header 부분 -->
+	<tiles:insertAttribute name="header"/>
 
     <div id="body">
         <div class="content-wrapper clearfix">
             index 페이지
         </div>
     </div>
-
-    <footer id="footer">
+    
+	<!-- footer 부분 -->
+	<tiles:insertAttribute name="footer"/>
+	
+<!--     <footer id="footer">
         <div class="content-wrapper clearfix">
             <div id="logo-footer-container">
                 <h2 id="logo-footer"><img src="images/logo-footer.png" alt="회사정보" /></h2>
@@ -51,7 +58,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
 
     <!--<aside id="quick-menu">
         <h1>QUICK MENU</h1>
